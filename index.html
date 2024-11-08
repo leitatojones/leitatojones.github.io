@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>Leitato Jones</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Leitato Jones is a short story fiction writer.">
+        <meta name="twitter:card" content="Leitato Jones official website.">
+        <meta name="twitter:site" content="@leitatojones">
+        <meta name="keywords" content="Leitato Jones, Leitato, fiction, short-story writer, short-stories">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="canonical" href="https://www.leitatojones.com/">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link rel="shortcut icon" type="image/jpg" href="images/favicon.png"/>
+
+        <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+        <script type='text/javascript' src="js/bootstrap.min.js"></script>
+    </head>
+
+    <!-- 
+
+    “Once you realize that the road is the goal and
+    that you are always on the road, not to reach a goal, but
+    to enjoy its beauty and its wisdom,
+    life ceases to be a task and
+    becomes natural and simple, in itself an ecstasy.”
+
+                                    ― Sri Nisargadatta Maharaj
+    -->
+
+    <body>
+        <script type="text/javascript">
+            $(window).load(function(){
+            $('.popoverData').popover();
+            });
+            $(function(){
+            function distributeFields() {
+                var radius = ($('#archetype').height() / 2) + 63;
+                var fields = $('.btn'), container = $('#circle'),
+                    width = container.width(), height = container.height(),
+                    step = (2*Math.PI) / fields.length, angle = 90 + step*2.7;
+                fields.each(function() {
+                    var x = Math.round(width/2 + radius * Math.cos(angle) - $(this).width()/2);
+                    var y = Math.round(height/2 + radius * Math.sin(angle) - $(this).height()/2);
+                    if(window.console) {
+                        console.log($(this).text(), x, y);
+                    }
+                    $(this).css({
+                        left: x + 'px',
+                        top: y + 'px'
+                    });
+                    angle += step;
+                });
+            }
+            distributeFields();
+            });
+        </script>
+        
+        <!--moon photos from NASA: https://moon.nasa.gov/moon-in-motion/moon-phases -->
+
+        <div id="content">
+            <div id="circle">
+                <a href="https://stories.leitatojones.com" target="_blank">
+                <img src="" data-random-image="images/1.jpeg images/2.jpeg images/3.jpeg images/4.jpeg images/5.jpeg images/6.jpeg images/7.jpeg images/8.jpeg" alt="Substack" id="archetype">
+                <script>
+                    const image = document.querySelector('img[data-random-image]');
+                    const sources = image.dataset.randomImage.split(" ");
+                    const randomSource = sources[Math.floor(Math.random() * sources.length)]
+                    image.setAttribute('src', randomSource);
+                </script>    
+                </a>
+            
+                <div id="moon-phases">
+                    <a href="https://stories.leitatojones.com" target="_blank" a class="btn popoverData" data-content="The Old Pond Rd" rel="popover" data-placement="left" data-trigger="hover">
+                    <img src="images/5.jpeg" alt="Full Moon">
+                    </a>
+
+                    <a class="btn popoverData" data-content="¯\_(ツ)_/¯" rel="popover" data-placement="top" data-trigger="hover">
+                    <img src="images/6.jpeg" alt="Waning Gibbous">
+                    </a>
+
+                    <a class="btn popoverData" data-content=":)" rel="popover" data-placement="right" data-trigger="hover">
+                    <img src="images/7.jpeg" alt="Last Quarter">
+                    </a>
+
+                    <a class="btn popoverData" data-content=";)" rel="popover" data-placement="right" data-trigger="hover">
+                    <img src="images/8.jpeg" alt="Waning Crescent">
+                    </a>
+
+                    <a href="mailto:info@leitatojones.com" target="_blank" a class="btn popoverData" data-content="e-mail" rel="popover" data-placement="right" data-trigger="hover">
+                    <img src="images/1.jpeg" alt="New Moon">
+                    </a>
+
+                    <a class="btn popoverData" data-content="¯\_(ツ)_/¯" rel="popover" data-placement="bottom" data-trigger="hover">
+                    <img src="images/2.jpeg" alt="Waxing Cresent">
+                    </a>
+
+                    <a class="btn popoverData" data-content="o_O" rel="popover" data-placement="left" data-trigger="hover">
+                    <img src="images/3.jpeg" alt="First Quarter">
+                    </a>
+
+                    <a class="btn popoverData" data-content="(ง’̀-‘́)ง" rel="popover" data-placement="left" data-trigger="hover">
+                    <img src="images/4.jpeg" alt="Waxing Gibbous">
+                    </a>
+                </div>
+            </div>
+
+            <div id="about">
+                <audio crossorigin="anonymous"></audio>
+                <audio src="audio/e13olf.mp3" autoplay></audio>  
+                <script>
+                    const audio = document.querySelector("audio");
+                    function Autoplay() {
+                        audio.autoplay = true;
+                        audio.load();  
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
